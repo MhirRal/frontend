@@ -1,14 +1,247 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital@1&display=swap');
-:root
-body {
-    background-color: #191717;
-    color: white;
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital@1&display=swap");
+:root body {
+  background-color: #191717;
+  color: white;
 }
 h2 {
-    font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
 .btn-get-started {
+  background-color: #5d3587aa;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 180px;
+  height: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Adding transition for smooth color change */
+}
+
+/* Hover effect */
+.btn-get-started:hover {
+  background-color: #5d3587; /* Change color on hover */
+}
+
+/* Active effect (when the button is tapped/clicked) */
+.btn-get-started:active {
+  background-color: #5d3587cc; /* Change color on active */
+}
+
+/* Media query for responsiveness */
+@media (min-width: 768px) {
+  .btn-get-started {
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Media query for smaller screens */
+@media (min-width: 576px) {
+  .logo {
+    text-align: center; /* Center the logo on smaller screens */
+  }
+
+  .content {
+    text-align: center; /* Center the text on smaller screens */
+    margin-top: 20px; /* Adjust top margin for the text */
+  }
+
+  .btn-get-started {
+    display: block; /* Ensure the button appears as a block element */
+    margin: 20px auto; /* Center the button horizontally */
+  }
+}
+
+.btn-btn-primary {
+  background-color: #5d3587aa;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 180px;
+  height: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Adding transition for smooth color change */
+}
+
+/* Hover effect */
+.btn-btn-primary:hover {
+  background-color: #5d3587; /* Change color on hover */
+}
+
+/* Active effect (when the button is tapped/clicked) */
+.btn-btn-primary:active {
+  background-color: #5d3587cc; /* Change color on active */
+}
+.btn-btn-secondary {
+  background-color: #5d3587aa;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 180px;
+  height: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Adding transition for smooth color change */
+}
+
+/* Hover effect */
+.btn-btn-secondary:hover {
+  background-color: #5d3587; /* Change color on hover */
+}
+
+/* Active effect (when the button is tapped/clicked) */
+.btn-btn-secondary:active {
+  background-color: #5d3587cc; /* Change color on active */
+}
+
+/* SignUp Form */
+
+.form-wrapper {
+    background-color: #D9D9D9; /* White background with opacity */
+    padding: 80px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+    max-width: 400px; /* Set maximum width */
+    margin: auto; /* Center horizontally */
+    position: absolute; /* Positioning */
+    top: 50%; /* Move to 50% from the top */
+    left: 50%; /* Move to 50% from the left */
+    transform: translate(-50%, -50%); /* Centering trick */
+    text-align: center; /* Align form elements to the left */
+    /* Blur effect */
+    backdrop-filter: blur(5px); /* Adjust blur intensity as needed */
+  }
+
+  .form-wrapper input,
+  .form-wrapper select {
+    width: 250px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: left; /* Center the placeholder text */
+    outline: black;
+    font-size: 12px; /* Reduced font size for placeholders */
+  }
+  
+  
+  /* Custom dropdown */
+.dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.select-text {
+  position: relative;
+  padding: 10px;
+  font-size: 16px;
+  color: black;
+  border-radius: 5px;
+  border: none; /* Remove border around the text */
+  cursor: pointer;
+  text-align: center;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Adjust the position of the arrow */
+  transform: translateY(-50%);
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.password-container {
+  position: relative;
+}
+
+.show-hide-button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 14px;
+  color: #888;
+}
+
+.show-hide-button:focus {
+  outline: none;
+}
+
+.selected-text {
+    position: relative;
+    padding: 10px;
+    font-size: 13px;
+    color: black;
+    border-radius: 5px;
+    border: none; /* Remove border around the text */
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .checkbox-label input[type="checkbox"] {
+    display: none;
+  }
+  
+  .checkbox-label .checkbox-custom {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #000;
+    border-radius: 3px;
+    margin-right: 8px;
+    position: relative;
+  }
+  
+  .checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    width: 5px;
+    height: 9px;
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  /* Hover effect */
+  .btn-btn-primary:hover {
+    background-color: #5D3587; /* Change color on hover */
+  }
+  
+  /* Active effect (when the button is tapped/clicked) */
+  .btn-btn-primary:active {
+    background-color: #5D3587CC; /* Change color on active */
+  }
+  .btn-btn-secondary {
     background-color: #5D3587AA;
     color: white;
     border: none;
@@ -19,39 +252,68 @@ h2 {
     height: 50px;
     cursor: pointer;
     transition: background-color 0.3s; /* Adding transition for smooth color change */
+  }
+  
+  /* Hover effect */
+  .btn-btn-secondary:hover {
+    background-color: #5D3587; /* Change color on hover */
+  }
+  
+  /* Active effect (when the button is tapped/clicked) */
+  .btn-btn-secondary:active {
+    background-color: #5D3587CC; /* Change color on active */
+  }
+
+/* SignIn Form */
+.formed-wrapper {
+  background-color: #D9D9D9; /* White background with opacity */
+  padding: 60px;
+  height: 350px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+  max-width: 400px; /* Set maximum width */
+  margin: auto; /* Center horizontally */
+  position: absolute; /* Positioning */
+  top: 50%; /* Move to 50% from the top */
+  left: 50%; /* Move to 50% from the left */
+  transform: translate(-50%, -50%); /* Centering trick */
+  text-align: center; /* Align form elements to the left */
+  /* Blur effect */
+  backdrop-filter: blur(5px); /* Adjust blur intensity as needed */
+}
+
+.formed-wrapper input,
+.formed-wrapper select {
+  width: 250px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+  text-align: left; /* Center the placeholder text */
+  outline: black;
+  font-size: 12px; /* Reduced font size for placeholders */
+}
+
+.btn-btns-secondary {
+  background-color: #5D3587AA;
+  color: white;
+  border: none;
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 230px;
+  height: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Adding transition for smooth color change */
 }
 
 /* Hover effect */
-.btn-get-started:hover {
+.btn-btns-secondary:hover {
   background-color: #5D3587; /* Change color on hover */
 }
 
 /* Active effect (when the button is tapped/clicked) */
-.btn-get-started:active {
+.btn-btns-secondary:active {
   background-color: #5D3587CC; /* Change color on active */
 }
-
-/* Media query for responsiveness */
-@media (min-width: 768px) {
-    .btn-get-started {
-      padding: 8px 16px; /* Adjust padding for smaller screens */
-      font-size: 14px; /* Adjust font size for smaller screens */
-    }
-  }
-
-/* Media query for smaller screens */
-@media (min-width: 576px) {
-    .logo {
-      text-align: center; /* Center the logo on smaller screens */
-    }
-  
-    .content {
-      text-align: center; /* Center the text on smaller screens */
-      margin-top: 20px; /* Adjust top margin for the text */
-    }
-  
-    .btn-get-started {
-      display: block; /* Ensure the button appears as a block element */
-      margin: 20px auto; /* Center the button horizontally */
-    }
-  }
