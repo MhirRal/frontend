@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital@1&display=swap');
+:root
+body {
+    background-color: #191717;
+    color: white;
+}
+h2 {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.btn-get-started {
+    background-color: #5D3587AA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    width: 180px;
+    height: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Adding transition for smooth color change */
+}
+
+/* Hover effect */
+.btn-get-started:hover {
+  background-color: #5D3587; /* Change color on hover */
+}
+
+/* Active effect (when the button is tapped/clicked) */
+.btn-get-started:active {
+  background-color: #5D3587CC; /* Change color on active */
+}
+
+/* Media query for responsiveness */
+@media (min-width: 768px) {
+    .btn-get-started {
+      padding: 8px 16px; /* Adjust padding for smaller screens */
+      font-size: 14px; /* Adjust font size for smaller screens */
+    }
+  }
+
+/* Media query for smaller screens */
+@media (min-width: 576px) {
+    .logo {
+      text-align: center; /* Center the logo on smaller screens */
+    }
+  
+    .content {
+      text-align: center; /* Center the text on smaller screens */
+      margin-top: 20px; /* Adjust top margin for the text */
+    }
+  
+    .btn-get-started {
+      display: block; /* Ensure the button appears as a block element */
+      margin: 20px auto; /* Center the button horizontally */
+    }
+  }
