@@ -3,8 +3,10 @@
   background-color: #191717;
   color: white;
 }
-h2 {
+.first {
   font-family: "Work Sans", sans-serif;
+  text-align: left;
+  font-size: 25px;
 }
 
 .btn-get-started {
@@ -317,3 +319,150 @@ select {
 .btn-btns-secondary:active {
   background-color: #5D3587CC; /* Change color on active */
 }
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+/* Sidebar */
+.sidebar-btn {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.sidebar-channel-list {
+  margin-top: 10px;
+}
+
+.sidebar-channel-list p {
+  margin: 5px 0;
+}
+
+.sidebar-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: calc(100% - 40px);
+}
+
+.logout-btn {
+  width: 100%;
+}
+
+/* Admin.css */
+.admin-container {
+  display: flex;
+  flex-direction: row; /* Changed to row */
+  height: 100vh;
+}
+
+.sidebar-wrapper {
+  width: 300px;
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+
+.message-box {
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  overflow-y: auto; /* Add this line */
+ }
+
+.message-input {
+  display: flex;
+  align-items: center;
+}
+
+.message-box .form-group {
+  margin-bottom: 10px;
+  margin-right: 10px; /* Added margin to separate elements */
+}
+
+.message-input .form-control {
+  width: 800px;
+  height: 40px; /* Change height to auto */
+  font-size: 14px;
+  margin-bottom: 30px;
+  margin-left: 50px;
+  background-color: #343849 !important; /* Background color */
+  color: white !important; /* Text color */
+  padding: 5px 10px; /* Adjust padding for better visibility */
+  border-radius: 25px;
+  word-wrap: break-word; /* Enable word wrapping */
+  max-height: 120px;
+  padding: 10px 10px;
+}
+
+.message-input .form-control::placeholder {
+  color: white;
+}
+
+.send-btn {
+  height: 40px;
+  font-size: 14px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  background-color: transparent !important; /* Set icon's background color to transparent */
+  border: none !important; /* Remove button border */
+  padding: 0; /* Remove padding */
+}
+
+.send-btn:focus {
+  outline: none; /* Remove focus outline */
+}
+
+/* Styles for Sidebar remain unchanged */
+.sidebar-wrapper {
+  width: 300px;
+}
+
+/* Navbar */
+.navbar-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - 250px); /* Assuming the sidebar width is 300px */
+  padding: 20px;
+  background-color: #5D3587;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+ 
+ /* Center the text */
+ .navbar-title {
+  margin: 0;
+  font-size: 24px;
+  color: #fff; /* Adjust text color */
+  text-align: center;
+  flex: 1;
+ }
+ 
+ /* Style the button */
+ .navbar-button {
+  margin: 0;
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #fff; /* Adjust text color */
+  background-color: #8244AD; /* Adjust background color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+ }
+ 
+ .navbar-button:hover {
+  background-color: #5D3587; /* Adjust hover background color */
+ }

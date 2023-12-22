@@ -5,7 +5,7 @@ const SignInForm = () => {
   const history = useNavigate();
 
   const [loginData, setLoginData] = useState({
-    username: '',
+    email: '',
     password: '',
   });
 
@@ -20,14 +20,38 @@ const SignInForm = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleSignIn = (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
-    // Here you can implement your login logic,
-    // such as sending the data to the server for authentication
-    console.log('Login Data:', loginData);
 
-    // For now, let's simulate a successful login by navigating to the welcome page
-    history('/welcome'); // Replace '/welcome' with your welcome page route
+    try {
+      const response = await fetch('/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginData),
+      });
+
+      if (response.ok) {
+        // Successful login
+        // Get the user's channel from the API or localStorage
+        const userChannel = 'Mobile Legends'; // Example channel received from the server
+
+        if (userChannel === 'Mobile Legends') {
+          history('/user_ml');
+        } else if (userChannel === 'Valorant') {
+          history('/user_val');
+        } else {
+          // Redirect to admin if not a user
+          history('/admin');
+        }
+      } else {
+        // Handle failed login (e.g., display an error message)
+        console.error('Login failed');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+    }
   };
 
   return (
@@ -36,10 +60,10 @@ const SignInForm = () => {
         <div>
           <input
             type="text"
-            id="username"
-            name="username"
-            placeholder="Username"
-            value={loginData.username}
+            id="email"
+            name="email"
+            placeholder="Email"
+            value={loginData.email}
             onChange={handleInputChange}
           />
         </div>

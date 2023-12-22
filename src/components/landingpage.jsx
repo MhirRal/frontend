@@ -18,8 +18,8 @@ function LandingPage() {
           <img src={info} width={450} alt="Logo" />
           <button className="btn-get-started" onClick={handleGetStarted}>Get Started</button>
         </div>
-        <div className="col-md-6 mt-5 pt-3 content">
-          <h2>InfoGuild is an announcement system designed exclusively for CSU-Gaming and Multiplayer Esports Enthusiasts members. Its primary objective is to streamline communication by facilitating the seamless delivery of announcements to members through their respective channels. Our platform aims to enhance the overall experience for our community, providing a centralized hub for important updates and information tailored to the specific interests and channels of our diverse member base. Join us in this simplified platform that keeps everyone in the loop, making sure you get the news that matters to you!</h2>
+        <div className="col-md-6 mt-5 pt-5 content">
+          <p className='first'>InfoGuild is an announcement system designed exclusively for CSU-Gaming and Multiplayer Esports Enthusiasts members. Its primary objective is to streamline communication by facilitating the seamless delivery of announcements to members through their respective channels. Our platform aims to enhance the overall experience for our community, providing a centralized hub for important updates and information tailored to the specific interests and channels of our diverse member base. Join us in this simplified platform that keeps everyone in the loop, making sure you get the news that matters to you!</p>
         </div>
       </div>
     </div>
