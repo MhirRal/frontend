@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
+const existingUsernames = ['john_doe', 'emma_smith']; // Simulated existing usernames
+const existingEmails = ['john@example.com', 'emma@example.com']; // Simulated existing emails
 
 const SignUpForm = () => {
-    const history = useNavigate();
+  const history = useNavigate();
 
   const [formData, setFormData] = useState({
     username: '',
     email: '',
     password: '',
     confirmPassword: '',
-    selectedEvent: '', // To store the selected event
-    agreePrivacyPolicy: false, // New state for the checkbox
+    // selectedEvent: '', // To store the selected event
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -26,24 +26,47 @@ const SignUpForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleEventChange = (e) => {
-    setFormData({ ...formData, selectedEvent: e.target.value });
-  };
-
-  const handleCheckboxChange = (e) => {
-    const { name, checked } = e.target;
-    setFormData({ ...formData, [name]: checked });
-  };
+  // const handleEventChange = (e) => {
+  //   setFormData({ ...formData, selectedEvent: e.target.value });
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.agreePrivacyPolicy) {
-      // Proceed with form submission
+
+    const { username, email, password, confirmPassword } = formData;
+
+    const isUsernameTaken = existingUsernames.includes(username);
+    const isEmailTaken = existingEmails.includes(email);
+    const isPasswordValid = password.length >= 8;
+
+    if (isUsernameTaken) {
+      alert('Username is already taken. Please choose another.');
+      return;
+    }
+
+    if (isEmailTaken) {
+      alert('Email is already registered. Please use another email.');
+      return;
+    }
+
+    if (!isPasswordValid) {
+      alert('Password must be at least 8 characters long.');
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert('Passwords do not match.');
+      return;
+    }
+
+    // For demonstration purposes, simulating successful sign-up
+    const isSignUpSuccessful = true; // Simulated successful sign-up
+
+    if (isSignUpSuccessful) {
       console.log(formData);
-      history.push('/welcome'); // Replace '/welcome' with the route to your welcome page/component
+      history('/welcome'); // Redirect to '/welcome' on successful sign-up
     } else {
-      // Show an alert or message informing the user to agree to the privacy policy
-      alert('Please agree to the privacy policy to proceed.');
+      console.log('Sign-up failed!');
     }
   };
 
@@ -104,6 +127,7 @@ const SignUpForm = () => {
             {showPassword ? 'Hide' : 'Show'}
           </button>
         </div>
+        {/* 
         <div className="dropdown">
           <div className="select-text">Choose Your Event!</div>
           <select id="event" name="selectedEvent" onChange={handleEventChange}>
@@ -113,21 +137,8 @@ const SignUpForm = () => {
             <option value="Mobile Legends">Mobile Legends</option>
             <option value="Valorant">Valorant</option>
           </select>
-        </div>
-        <div className="privacy-policy selected-text">
-        <label htmlFor="agreePolicy" className="checkbox-label">
-          <input
-            type="checkbox"
-            id="agreePolicy"
-            name="agreePolicy"
-            checked={formData.agreePolicy}
-            onChange={handleCheckboxChange}
-          />
-          <span className="checkbox-custom"></span>
-          <span>I agree with the privacy policy</span>
-        </label>
-      </div>
-
+        </div> 
+        */}
         <button type="submit" className="btn-btns-secondary">
           Sign Up
         </button>

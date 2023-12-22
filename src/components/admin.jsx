@@ -1,9 +1,8 @@
 import React, { useRef } from 'react';
 import Sidebar from './sidebar';
-import Navbar from './navbar';
 import 'bootstrap-icons/font/bootstrap-icons.css'; // Import Bootstrap Icons CSS
 
-function AdminComponent() {
+function Admin() {
  const textareaRef = useRef(null);
 
  const handleSendMessage = (event) => {
@@ -60,4 +59,4 @@ function AdminComponent() {
  );
 }
 
-export default AdminComponent;
+export default Admin;

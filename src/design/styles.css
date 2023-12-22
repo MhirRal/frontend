@@ -352,6 +352,8 @@ select {
 
 .logout-btn {
   width: 100%;
+  background-color: #5D3587 !important;
+  color: white !important;
 }
 
 /* Admin.css */
